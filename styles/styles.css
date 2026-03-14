@@ -190,7 +190,14 @@
 
   /* misc */
   --header-height: 64px;
+  --nav-height: 44px;
   --breadcrumb-height: 24px;
+}
+
+@media (width >= 900px) {
+  :root {
+    --header-height: 108px;
+  }
 }
 
 .light-scheme {
