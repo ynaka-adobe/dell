@@ -1,0 +1,36 @@
+{
+  "variantName": "hero-story",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-03-13T00:00:00Z",
+  "sourceContext": {
+    "originUrl": "https://www.dell.com/en-us"
+  },
+  "visualCharacteristics": {
+    "background": "dark",
+    "layout": "full-width",
+    "theme": "customer-story",
+    "description": "Dark full-width hero with background image and video CTA for customer stories"
+  },
+  "contentPattern": {
+    "structure": "hero-banner",
+    "description": "Full-width background image hero with overlaid text content, headline, body copy, and a video call-to-action link"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Customer story highlights",
+      "Case study banners",
+      "Video CTA hero sections",
+      "Testimonial feature sections"
+    ],
+    "notSuitableFor": [
+      "Multi-slide carousels",
+      "Product listing sections",
+      "Text-only content areas"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1
+  }
+}

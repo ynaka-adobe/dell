@@ -1,0 +1,36 @@
+{
+  "variantName": "cards-news",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-13T00:00:00Z",
+  "sourceContext": {
+    "originUrl": "https://www.dell.com/en-us"
+  },
+  "visualCharacteristics": {
+    "background": "deep-navy",
+    "layout": "grid",
+    "theme": "news-cards",
+    "description": "Deep-navy themed news thumbnail cards with images and article summaries"
+  },
+  "contentPattern": {
+    "structure": "card-grid",
+    "description": "Grid of news cards each with a thumbnail image and article body text for news and updates section"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "News and updates sections",
+      "Blog post previews",
+      "Press release listings",
+      "Editorial content grids"
+    ],
+    "notSuitableFor": [
+      "Product navigation grids",
+      "Icon-only tiles",
+      "Full-width promotional banners"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1
+  }
+}

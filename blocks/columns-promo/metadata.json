@@ -1,0 +1,36 @@
+{
+  "variantName": "columns-promo",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-13T00:00:00Z",
+  "sourceContext": {
+    "originUrl": "https://www.dell.com/en-us"
+  },
+  "visualCharacteristics": {
+    "background": "navy",
+    "layout": "two-column",
+    "theme": "promotional",
+    "description": "Navy-themed two-column layout with image and text in reversed order for Dell Premier promotion"
+  },
+  "contentPattern": {
+    "structure": "columns-image-text",
+    "description": "Two-column layout with image on one side and promotional text on the other, highlighting Dell Premier business solutions"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Business service promotions",
+      "Partner program highlights",
+      "Image-left text-right promotional sections",
+      "Enterprise offering CTAs"
+    ],
+    "notSuitableFor": [
+      "Product listing grids",
+      "Full-width hero banners",
+      "Multi-item navigation tiles"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1
+  }
+}

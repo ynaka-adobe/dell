@@ -1,0 +1,36 @@
+{
+  "variantName": "columns-account",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-13T00:00:00Z",
+  "sourceContext": {
+    "originUrl": "https://www.dell.com/en-us"
+  },
+  "visualCharacteristics": {
+    "background": "navy",
+    "layout": "two-column",
+    "theme": "account-promo",
+    "description": "Navy-themed two-column layout with text and image for My Account promotion"
+  },
+  "contentPattern": {
+    "structure": "columns-text-image",
+    "description": "Two-column layout with text content on one side and an image on the other, promoting account sign-in and benefits"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Account promotion sections",
+      "Sign-in or registration CTAs",
+      "Two-column text and image layouts",
+      "Service benefit highlights"
+    ],
+    "notSuitableFor": [
+      "Multi-card grids",
+      "Full-width hero banners",
+      "Navigation tile sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1
+  }
+}
