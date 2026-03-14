@@ -40,7 +40,7 @@ header {
       "brand"
       "nav"
       "actions";
-    grid-template-rows: var(--header-height) auto 1fr;
+    grid-template-rows: 64px auto 1fr;
   }
 
   .action-wrapper {
@@ -215,7 +215,7 @@ header {
     }
 
     .action-wrapper {
-      height: var(--header-height);
+      height: 64px;
       right: -13px;
 
       button {
