@@ -1,33 +1,132 @@
+/* Columns Account - Dell My Account Section */
 .columns-account > div {
   display: flex;
   flex-direction: column;
+}
+
+.columns-account > div > div {
+  order: 1;
+  padding: 24px;
+}
+
+.columns-account > div > .columns-account-img-col {
+  order: 2;
+}
+
+.columns-account > div > .columns-account-img-col img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .columns-account img {
   width: 100%;
 }
 
-.columns-account > div > div {
-  order: 1;
+/* Typography */
+.columns-account h3 {
+  font-size: var(--heading-font-size-l);
+  font-weight: 300;
+  line-height: 32px;
+  color: var(--color-white);
+  margin-bottom: 12px;
 }
 
-.columns-account > div > .columns-account-img-col {
-  order: 0;
+.columns-account p {
+  color: var(--color-white);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  margin-bottom: 16px;
 }
 
-.columns-account > div > .columns-account-img-col img {
-  display: block;
+/* CTA buttons */
+.columns-account p:has(a) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Primary CTA - Light button (white bg, dark text) */
+.columns-account a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--button-padding);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  border-radius: var(--button-border-radius);
+  text-decoration: none;
+  transition: var(--button-transition);
+  color: var(--color-near-black);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-white);
+}
+
+.columns-account a:hover {
+  background-color: var(--color-gray-100);
+  text-decoration: none;
+}
+
+/* Secondary CTA - Ghost/outline button */
+.columns-account p a + a {
+  color: var(--color-white);
+  background-color: transparent;
+  border: 1px solid var(--color-white);
+}
+
+.columns-account p a + a:hover {
+  background-color: rgb(255 255 255 / 10%);
+}
+
+/* Feature items (icon + label rows) */
+.columns-account ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.columns-account ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.columns-account ul li img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.columns-account ul li p,
+.columns-account ul li span {
+  font-size: var(--body-font-size-m);
+  color: var(--color-white);
+  margin: 0;
 }
 
 @media (width >= 900px) {
   .columns-account > div {
     align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    flex-direction: row;
+    gap: 40px;
   }
 
   .columns-account > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns-account > div > div:first-child {
+    padding: 40px 0 40px 24px;
+  }
+
+  .columns-account > div > .columns-account-img-col img {
+    height: 500px;
   }
 }

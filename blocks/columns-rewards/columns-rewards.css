@@ -1,14 +1,12 @@
+/* Columns Rewards - Dell Rewards Section */
 .columns-rewards > div {
   display: flex;
   flex-direction: column;
 }
 
-.columns-rewards img {
-  width: 100%;
-}
-
 .columns-rewards > div > div {
   order: 1;
+  padding: 24px;
 }
 
 .columns-rewards > div > .columns-rewards-img-col {
@@ -17,17 +15,96 @@
 
 .columns-rewards > div > .columns-rewards-img-col img {
   display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.columns-rewards img {
+  width: 100%;
+}
+
+/* Typography */
+.columns-rewards h2 {
+  font-size: var(--heading-font-size-xs);
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.columns-rewards h3 {
+  font-size: var(--heading-font-size-xl);
+  font-weight: 300;
+  line-height: 40px;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.columns-rewards p {
+  color: var(--color-white);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  margin-bottom: 16px;
+}
+
+/* CTA buttons */
+.columns-rewards p:last-child:has(a) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Primary CTA - Accent blue */
+.columns-rewards a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--button-padding);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  border-radius: var(--button-border-radius);
+  text-decoration: none;
+  transition: var(--button-transition);
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+.columns-rewards a:hover {
+  background-color: var(--color-blue-600);
+  border-color: var(--color-blue-600);
+  text-decoration: none;
+}
+
+/* Secondary CTA - text link style (last p with a link) */
+.columns-rewards p:last-of-type a {
+  background-color: transparent;
+  border: none;
+  padding: 0 16px;
+  color: var(--color-white);
+}
+
+.columns-rewards p:last-of-type a:hover {
+  text-decoration: underline;
+  background-color: transparent;
 }
 
 @media (width >= 900px) {
   .columns-rewards > div {
     align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    flex-direction: row;
+    gap: 40px;
   }
 
   .columns-rewards > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns-rewards > div > div:first-child {
+    padding: 40px 0 40px 24px;
   }
 }
