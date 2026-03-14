@@ -68,6 +68,26 @@ function bindEvents(block) {
   });
 }
 
+function decorateContentColumn(contentCol) {
+  const title = contentCol.querySelector('h4');
+  if (title) title.classList.add('carousel-products-slide-title');
+
+  const subtitle = contentCol.querySelector('h5');
+  if (subtitle) subtitle.classList.add('carousel-products-slide-subtitle');
+
+  const desc = contentCol.querySelector('p, span:not(a span)');
+  if (desc && !desc.closest('a')) desc.classList.add('carousel-products-slide-desc');
+
+  const links = [...contentCol.querySelectorAll('a')];
+  if (links.length) {
+    const ctaWrapper = document.createElement('div');
+    ctaWrapper.classList.add('carousel-products-slide-ctas');
+    links.forEach((a) => ctaWrapper.append(a));
+    contentCol.append(ctaWrapper);
+    contentCol.querySelectorAll('p:empty').forEach((p) => p.remove());
+  }
+}
+
 function createSlide(row, slideIndex, carouselId) {
   const slide = document.createElement('li');
   slide.dataset.slideIndex = slideIndex;
@@ -76,6 +96,7 @@ function createSlide(row, slideIndex, carouselId) {
 
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
     column.classList.add(`carousel-products-slide-${colIdx === 0 ? 'image' : 'content'}`);
+    if (colIdx === 1) decorateContentColumn(column);
     slide.append(column);
   });
 

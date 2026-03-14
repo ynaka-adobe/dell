@@ -1,4 +1,4 @@
-/* Carousel Products - Dell Featured Products Horizontal Carousel */
+/* Carousel Products - Dell Technologies Showcase style (dell.com/en-us) */
 .carousel-products-container .carousel-products-wrapper {
   max-width: unset;
   padding: 0;
@@ -6,6 +6,7 @@
 
 .carousel-products .carousel-products-slides-container {
   position: relative;
+  padding: 0 48px;
 }
 
 .carousel-products .carousel-products-slides,
@@ -20,8 +21,8 @@
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   overflow: auto hidden;
-  gap: 16px;
-  padding: 0 24px 24px;
+  gap: 24px;
+  padding: 24px 0 32px;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -30,44 +31,116 @@
   display: none;
 }
 
+/* Card - vertical stack: image, then content (title, subtitle, description, CTAs) */
 .carousel-products .carousel-products-slide {
   flex: 0 0 auto;
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   width: 280px;
-  background-color: transparent;
+  background-color: var(--color-dark-accent);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: background-color var(--transition-base);
+}
+
+.carousel-products .carousel-products-slide:hover {
+  background-color: rgb(29 44 59 / 0.95);
 }
 
 .carousel-products .carousel-products-slide .carousel-products-slide-image {
   line-height: 0;
+  background-color: var(--color-navy);
+}
+
+.carousel-products .carousel-products-slide .carousel-products-slide-image picture,
+.carousel-products .carousel-products-slide .carousel-products-slide-image img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .carousel-products .carousel-products-slide .carousel-products-slide-image picture > img {
-  width: 100%;
-  height: auto;
   aspect-ratio: 1 / 1;
   object-fit: contain;
 }
 
+/* Content block - title, subtitle, description, CTAs */
 .carousel-products .carousel-products-slide .carousel-products-slide-content {
-  padding: 12px 0;
+  padding: 20px 20px 24px;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+/* Product name (e.g. "XPS") */
+.carousel-products .carousel-products-slide .carousel-products-slide-title,
+.carousel-products .carousel-products-slide .carousel-products-slide-content h4 {
+  margin: 0;
+  font-size: var(--heading-font-size-m);
+  font-weight: 500;
+  line-height: 1.25;
   color: var(--color-white);
 }
 
-.carousel-products .carousel-products-slide .carousel-products-slide-content p {
+/* Tagline (e.g. "Crafted For You") */
+.carousel-products .carousel-products-slide .carousel-products-slide-subtitle,
+.carousel-products .carousel-products-slide .carousel-products-slide-content h5 {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-gray-200);
+}
+
+/* Description */
+.carousel-products .carousel-products-slide .carousel-products-slide-desc,
+.carousel-products .carousel-products-slide .carousel-products-slide-content p,
+.carousel-products .carousel-products-slide .carousel-products-slide-content span.carousel-products-slide-desc {
   margin: 0;
   font-size: var(--body-font-size-s);
-  line-height: 1.4;
+  line-height: 1.5;
+  color: var(--color-gray-200);
 }
 
-.carousel-products .carousel-products-slide .carousel-products-slide-content a {
-  color: var(--color-white);
+/* CTA links row - Shop Now / Learn More style */
+.carousel-products .carousel-products-slide .carousel-products-slide-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.carousel-products .carousel-products-slide .carousel-products-slide-ctas a {
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  color: var(--color-blue-500);
   text-decoration: none;
-  font-weight: 400;
+  transition: color var(--transition-fast);
 }
 
-.carousel-products .carousel-products-slide .carousel-products-slide-content a:hover {
+.carousel-products .carousel-products-slide .carousel-products-slide-ctas a:hover {
+  color: var(--color-white);
+  text-decoration: underline;
+}
+
+.carousel-products .carousel-products-slide .carousel-products-slide-ctas a:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* Legacy content links not in .carousel-products-slide-ctas */
+.carousel-products .carousel-products-slide .carousel-products-slide-content > a {
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  color: var(--color-blue-500);
+  text-decoration: none;
+}
+
+.carousel-products .carousel-products-slide .carousel-products-slide-content > a:hover {
   text-decoration: underline;
 }
 
@@ -76,7 +149,7 @@
   display: none;
 }
 
-/* Navigation arrows */
+/* Navigation arrows - positioned outside card area */
 .carousel-products .carousel-products-navigation-buttons {
   position: absolute;
   top: 50%;
@@ -88,19 +161,21 @@
   justify-content: space-between;
   z-index: 1;
   pointer-events: none;
+  padding: 0 4px;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 .carousel-products .carousel-products-navigation-buttons button {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   margin: 0;
-  border-radius: 3px;
+  border-radius: 2px;
   padding: 0;
   border: none;
-  background-color: rgb(20 29 40 / 80%);
-  transition: background-color 0.2s;
+  background-color: var(--color-dark-accent);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 24%);
+  transition: background-color 0.2s, box-shadow 0.2s;
   cursor: pointer;
   color: var(--color-white);
   pointer-events: auto;
@@ -108,7 +183,8 @@
 
 .carousel-products .carousel-products-navigation-buttons button:hover,
 .carousel-products .carousel-products-navigation-buttons button:focus-visible {
-  background-color: rgb(20 29 40 / 95%);
+  background-color: var(--color-navy);
+  box-shadow: 0 2px 12px rgb(0 0 0 / 32%);
 }
 
 .carousel-products .carousel-products-navigation-buttons button::after {
@@ -132,6 +208,10 @@
 
 @media (width >= 900px) {
   .carousel-products .carousel-products-slide {
-    width: 300px;
+    width: 320px;
+  }
+
+  .carousel-products .carousel-products-slides-container {
+    padding: 0 56px;
   }
 }
