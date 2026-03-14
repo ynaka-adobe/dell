@@ -1,0 +1,36 @@
+{
+  "variantName": "carousel-hero",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-03-13T00:00:00Z",
+  "sourceContext": {
+    "originUrl": "https://www.dell.com/en-us"
+  },
+  "visualCharacteristics": {
+    "background": "dark",
+    "layout": "full-width",
+    "theme": "hero-banner",
+    "description": "Dark, full-width hero carousel with product promo slides and overlay content"
+  },
+  "contentPattern": {
+    "structure": "carousel-slides",
+    "description": "Multiple hero slides each with a full-bleed background image and overlaid text content with product promotions and CTAs"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Homepage hero banners",
+      "Product launch showcases",
+      "Seasonal promotional carousels",
+      "Full-width rotating hero content"
+    ],
+    "notSuitableFor": [
+      "Inline product carousels",
+      "Thumbnail galleries",
+      "Content-only sliders without background images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1
+  }
+}
