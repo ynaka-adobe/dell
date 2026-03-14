@@ -1,0 +1,166 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.dell.com/en-us"
+      ],
+      "description": "Dell US homepage with hero banners, product categories, promotions, and featured content",
+      "blocks": [
+        {
+          "name": "carousel-hero",
+          "instances": [
+            ".hpg-hero-section-container"
+          ]
+        },
+        {
+          "name": "cards-wayfinding",
+          "instances": [
+            "#ghpg-productway-section"
+          ]
+        },
+        {
+          "name": "carousel-products",
+          "instances": [
+            "#ghpg-promo-section"
+          ]
+        },
+        {
+          "name": "hero-story",
+          "instances": [
+            ".ghpg-video-section"
+          ]
+        },
+        {
+          "name": "cards-support",
+          "instances": [
+            ".ghpg-support-background:nth-child(7)"
+          ]
+        },
+        {
+          "name": "columns-account",
+          "instances": [
+            ".ghpg-support-background:nth-child(8)"
+          ]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [
+            ".ghpg-support-background:nth-child(9)"
+          ]
+        },
+        {
+          "name": "cards-news",
+          "instances": [
+            ".ghpg-whatshpg-section"
+          ]
+        },
+        {
+          "name": "columns-rewards",
+          "instances": [
+            ".ghpg-pl-module"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero Banner Carousel",
+          "selector": ".hpg-hero-section-container",
+          "style": null,
+          "blocks": [
+            "carousel-hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Product Wayfinding",
+          "selector": "#ghpg-productway-section",
+          "style": "dark",
+          "blocks": [
+            "cards-wayfinding"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Featured Products",
+          "selector": "#ghpg-promo-section",
+          "style": "dark-accent",
+          "blocks": [
+            "carousel-products"
+          ],
+          "defaultContent": [
+            "#ghpg-promo-section > div:first-child"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Customer Story Video",
+          "selector": ".ghpg-video-section",
+          "style": null,
+          "blocks": [
+            "hero-story"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Dell Support",
+          "selector": ".ghpg-support-background:nth-child(7)",
+          "style": "navy",
+          "blocks": [
+            "cards-support"
+          ],
+          "defaultContent": [
+            ".ghpg-support-background:nth-child(7) > div > div:first-child"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "My Account",
+          "selector": ".ghpg-support-background:nth-child(8)",
+          "style": "navy",
+          "blocks": [
+            "columns-account"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Dell Premier",
+          "selector": ".ghpg-support-background:nth-child(9)",
+          "style": "navy",
+          "blocks": [
+            "columns-promo"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Whats Happening",
+          "selector": ".ghpg-whatshpg-section",
+          "style": "deep-navy",
+          "blocks": [
+            "cards-news"
+          ],
+          "defaultContent": [
+            ".ghpg-whatshpg-section > div > div:first-child",
+            ".ghpg-whatshpg-section > div > div:last-child"
+          ]
+        },
+        {
+          "id": "section-9",
+          "name": "Dell Rewards",
+          "selector": ".ghpg-pl-module",
+          "style": "deep-navy",
+          "blocks": [
+            "columns-rewards"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

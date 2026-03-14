@@ -1,0 +1,130 @@
+/* Columns Promo - Dell Premier Section */
+.columns-promo > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-promo > div > div {
+  order: 1;
+  padding: 24px;
+}
+
+.columns-promo > div > .columns-promo-img-col {
+  order: 0;
+}
+
+.columns-promo > div > .columns-promo-img-col img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.columns-promo img {
+  width: 100%;
+}
+
+/* Typography */
+.columns-promo h3 {
+  font-size: var(--heading-font-size-l);
+  font-weight: 300;
+  line-height: 32px;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.columns-promo p {
+  color: var(--color-white);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  margin-bottom: 16px;
+}
+
+/* CTA buttons */
+.columns-promo p:has(a) {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Primary CTA - text link with arrow */
+.columns-promo a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  text-decoration: none;
+  transition: var(--button-transition);
+  color: var(--color-white);
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+.columns-promo a:hover {
+  text-decoration: underline;
+}
+
+/* Secondary CTA - Ghost/outline button */
+.columns-promo p a + a {
+  color: var(--color-white);
+  background-color: transparent;
+  border: 1px solid var(--color-white);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-padding);
+}
+
+.columns-promo p a + a:hover {
+  background-color: rgb(255 255 255 / 10%);
+  text-decoration: none;
+}
+
+/* Feature items (icon + label rows) */
+.columns-promo ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.columns-promo ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.columns-promo ul li img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.columns-promo ul li p,
+.columns-promo ul li span {
+  font-size: var(--body-font-size-m);
+  color: var(--color-white);
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .columns-promo > div {
+    align-items: center;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .columns-promo > div > div {
+    flex: 1;
+    order: unset;
+  }
+
+  .columns-promo > div > .columns-promo-img-col img {
+    height: 500px;
+  }
+}

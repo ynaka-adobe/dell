@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://www.dell.com/en-us",
+  "path": "en-us",
+  "timestamp": "2026-03-13T04:05:51.910Z",
+  "title": "Computers, Monitors & Technology Solutions | Dell USA",
+  "template": "homepage",
+  "blocks": [
+    "carousel-hero",
+    "cards-wayfinding",
+    "carousel-products",
+    "hero-story",
+    "cards-support",
+    "cards-news",
+    "columns-rewards"
+  ]
+}
