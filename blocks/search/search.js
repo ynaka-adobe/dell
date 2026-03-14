@@ -15,7 +15,7 @@ export default function decorate(block) {
   const btn = document.createElement('button');
   btn.className = 'search-btn';
   btn.setAttribute('aria-label', 'Search Dell');
-  btn.innerHTML = '<svg class="icon icon-search"><use href="/img/icons/search.svg#search"></use></svg>';
+  btn.innerHTML = '<svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16z"/></svg>';
 
   btn.addEventListener('click', () => {
     const query = input.value.trim();
