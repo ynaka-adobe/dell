@@ -1,0 +1,36 @@
+{
+  "variantName": "carousel-products",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-03-13T00:00:00Z",
+  "sourceContext": {
+    "originUrl": "https://www.dell.com/en-us"
+  },
+  "visualCharacteristics": {
+    "background": "dark-accent",
+    "layout": "full-width",
+    "theme": "product-showcase",
+    "description": "Dark-accent product showcase carousel featuring featured products with images and details"
+  },
+  "contentPattern": {
+    "structure": "carousel-slides",
+    "description": "Product showcase slides with images, product names, pricing, and call-to-action links"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Featured product showcases",
+      "Product category highlights",
+      "Deal and offer carousels",
+      "Product comparison sliders"
+    ],
+    "notSuitableFor": [
+      "Hero banners",
+      "Text-only content sliders",
+      "Image galleries without product context"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1
+  }
+}

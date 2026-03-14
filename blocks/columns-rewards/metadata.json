@@ -1,0 +1,36 @@
+{
+  "variantName": "columns-rewards",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-03-13T00:00:00Z",
+  "sourceContext": {
+    "originUrl": "https://www.dell.com/en-us"
+  },
+  "visualCharacteristics": {
+    "background": "deep-navy",
+    "layout": "two-column",
+    "theme": "rewards-promo",
+    "description": "Deep-navy themed two-column layout with text and image promoting Dell Rewards program"
+  },
+  "contentPattern": {
+    "structure": "columns-text-image",
+    "description": "Two-column layout with text content describing rewards benefits on one side and a promotional image on the other"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Loyalty and rewards program promotions",
+      "Membership benefit highlights",
+      "Two-column text and image CTAs",
+      "Program enrollment sections"
+    ],
+    "notSuitableFor": [
+      "Product catalog grids",
+      "Full-width carousel banners",
+      "Navigation tile sections"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1
+  }
+}

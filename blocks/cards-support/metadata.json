@@ -1,0 +1,36 @@
+{
+  "variantName": "cards-support",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-13T00:00:00Z",
+  "sourceContext": {
+    "originUrl": "https://www.dell.com/en-us"
+  },
+  "visualCharacteristics": {
+    "background": "navy",
+    "layout": "grid",
+    "theme": "support-tiles",
+    "description": "Navy-themed icon and label tiles for support and service navigation"
+  },
+  "contentPattern": {
+    "structure": "card-grid",
+    "description": "Grid of support tiles each with an icon image and short label text for quick access to support resources"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Support and services navigation",
+      "Icon-based quick links",
+      "Help center tile grids",
+      "Service category overviews"
+    ],
+    "notSuitableFor": [
+      "Product showcases with detailed descriptions",
+      "Editorial content cards",
+      "Full-width hero banners"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "variantName": "cards-wayfinding",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-03-13T00:00:00Z",
+  "sourceContext": {
+    "originUrl": "https://www.dell.com/en-us"
+  },
+  "visualCharacteristics": {
+    "background": "dark",
+    "layout": "grid",
+    "theme": "navigation",
+    "description": "Dark 8-item navigation grid with product category cards featuring images and labels"
+  },
+  "contentPattern": {
+    "structure": "card-grid",
+    "description": "Grid of 8 product category navigation cards, each with a thumbnail image and category label for wayfinding"
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "Product category navigation grids",
+      "Wayfinding tiles on homepages",
+      "Category browse sections",
+      "Icon-based navigation grids"
+    ],
+    "notSuitableFor": [
+      "Detailed product listings",
+      "News or editorial cards",
+      "Single-column content layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/en-us"],
+    "reuseCount": 1
+  }
+}
