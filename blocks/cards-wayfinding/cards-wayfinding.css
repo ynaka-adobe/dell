@@ -1,27 +1,71 @@
+/* Cards Wayfinding - Dell Product Category Navigation */
 .cards-wayfinding > ul {
   list-style: none;
   margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  padding: 24px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
 }
 
 .cards-wayfinding > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  flex: 1 1 0;
+  min-width: 90px;
+  max-width: 140px;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Text label above image (matching Dell original) */
+.cards-wayfinding > ul > li > div:last-child {
+  order: 0;
+}
+
+.cards-wayfinding > ul > li > div:first-child {
+  order: 1;
+  line-height: 0;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+.cards-wayfinding > ul > li a {
+  text-decoration: none;
+  color: var(--color-white);
+}
+
+.cards-wayfinding > ul > li a:hover {
+  text-decoration: underline;
 }
 
 .cards-wayfinding .cards-wayfinding-card-body {
-  margin: 16px;
+  margin: 0;
+  padding: 8px 4px;
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  color: var(--color-white);
+  text-align: center;
+}
+
+.cards-wayfinding .cards-wayfinding-card-body p {
+  margin: 0;
 }
 
 .cards-wayfinding .cards-wayfinding-card-image {
   line-height: 0;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
 }
 
 .cards-wayfinding > ul > li img {
   width: 100%;
+  max-width: 119px;
+  height: auto;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
 }

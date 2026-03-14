@@ -1,3 +1,4 @@
+/* Hero Story - Dell Customer Story / Video Section */
 .hero-story-container .hero-story-wrapper {
   max-width: unset;
   padding: 0;
@@ -7,31 +8,16 @@
   position: relative;
   padding: 40px 24px;
   min-height: 300px;
-}
-
-.hero-story h1,
-.hero-story h2,
-.hero-story h3,
-.hero-story h4,
-.hero-story h5,
-.hero-story h6,
-.hero-story p {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--background-color);
-}
-
-.hero-story.no-image * {
-  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .hero-story picture {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
-  object-fit: cover;
-  box-sizing: border-box;
 }
 
 .hero-story img {
@@ -40,8 +26,87 @@
   height: 100%;
 }
 
+/* Text content overlay */
+.hero-story > div:last-child {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-story h2 {
+  font-size: var(--heading-font-size-xs);
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.hero-story h3 {
+  font-size: var(--heading-font-size-xl);
+  font-weight: 300;
+  line-height: 40px;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.hero-story p {
+  color: var(--color-white);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  margin-bottom: 16px;
+  max-width: 600px;
+}
+
+/* Action button (Play Video / CTA) */
+.hero-story a.button,
+.hero-story a.btn,
+.hero-story .button-container a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: var(--button-padding);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  border-radius: var(--button-border-radius);
+  text-decoration: none;
+  transition: var(--button-transition);
+  color: var(--color-white);
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+.hero-story a.button:hover,
+.hero-story a.btn:hover,
+.hero-story .button-container a:hover {
+  background-color: var(--color-blue-600);
+  border-color: var(--color-blue-600);
+}
+
+/* Text links (Learn More, View All Stories) */
+.hero-story a:not(.button, .btn) {
+  color: var(--color-white);
+  font-weight: 500;
+  font-size: var(--body-font-size-m);
+  text-decoration: none;
+}
+
+.hero-story a:not(.button, .btn):hover {
+  text-decoration: underline;
+}
+
+.hero-story.no-image {
+  background-color: var(--color-dark-base);
+}
+
+.hero-story.no-image * {
+  color: var(--color-white);
+}
+
 @media (width >= 900px) {
   .hero-story {
-    padding: 40px 32px;
+    padding: 60px 32px;
   }
 }
