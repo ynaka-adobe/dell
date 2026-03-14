@@ -28,9 +28,13 @@ function updateActiveSlide(slide) {
 
 export function showSlide(block, slideIndex = 0) {
   const slides = block.querySelectorAll('.carousel-products-slide');
+  if (!slides.length) return;
   let realSlideIndex = slideIndex < 0 ? slides.length - 1 : slideIndex;
   if (slideIndex >= slides.length) realSlideIndex = 0;
   const activeSlide = slides[realSlideIndex];
+
+  block.dataset.activeSlide = realSlideIndex;
+  updateActiveSlide(activeSlide);
 
   activeSlide.querySelectorAll('a').forEach((link) => link.removeAttribute('tabindex'));
   block.querySelector('.carousel-products-slides').scrollTo({
@@ -70,10 +74,14 @@ function bindEvents(block) {
 
 function decorateContentColumn(contentCol) {
   const title = contentCol.querySelector('h4');
-  if (title) title.classList.add('carousel-products-slide-title');
+  if (title) {
+    title.classList.add('carousel-products-slide-title', 'ghpg-title');
+  }
 
   const subtitle = contentCol.querySelector('h5');
-  if (subtitle) subtitle.classList.add('carousel-products-slide-subtitle');
+  if (subtitle) {
+    subtitle.classList.add('carousel-products-slide-subtitle', 'ghpg-subtitle');
+  }
 
   const desc = contentCol.querySelector('p, span:not(a span)');
   if (desc && !desc.closest('a')) desc.classList.add('carousel-products-slide-desc');
@@ -88,6 +96,18 @@ function decorateContentColumn(contentCol) {
   }
 }
 
+function normalizeImageColumn(imageCol) {
+  const img = imageCol.querySelector('img');
+  if (!img) return;
+  let src = img.getAttribute('src');
+  if (src && src.startsWith('//')) {
+    img.setAttribute('src', `https:${src}`);
+  }
+  if (img.parentElement && img.parentElement.tagName === 'P') {
+    img.parentElement.replaceWith(img);
+  }
+}
+
 function createSlide(row, slideIndex, carouselId) {
   const slide = document.createElement('li');
   slide.dataset.slideIndex = slideIndex;
@@ -96,7 +116,12 @@ function createSlide(row, slideIndex, carouselId) {
 
   row.querySelectorAll(':scope > div').forEach((column, colIdx) => {
     column.classList.add(`carousel-products-slide-${colIdx === 0 ? 'image' : 'content'}`);
-    if (colIdx === 1) decorateContentColumn(column);
+    if (colIdx === 0) {
+      normalizeImageColumn(column);
+    } else if (colIdx === 1) {
+      column.classList.add('ghpg-product-text-container');
+      decorateContentColumn(column);
+    }
     slide.append(column);
   });
 
@@ -161,7 +186,13 @@ export default async function decorate(block) {
   container.append(slidesWrapper);
   block.prepend(container);
 
+  /* One card at a time: stage width = slideCount × 100% so each slide fills viewport */
+  slidesWrapper.style.width = `${rows.length * 100}%`;
+
   if (!isSingleSlide) {
+    block.dataset.activeSlide = '0';
+    const firstSlide = slidesWrapper.querySelector('.carousel-products-slide');
+    if (firstSlide) updateActiveSlide(firstSlide);
     bindEvents(block);
   }
 }

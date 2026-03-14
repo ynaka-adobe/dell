@@ -11,7 +11,7 @@
  * - Col 2: heading, description, CTA link (optional)
  *
  * Source DOM: #ghpg-promo-section
- *   .ghpg-product-carousal > .ghpg-product-item-container > .owl-stage-outer
+ *   .ghpg-product-carousal (Dell typo: "carousal") > .ghpg-product-item-container > .owl-stage-outer
  *   Each slide: .owl-item > .ghpg-product-item-container-row
  *     - figure > img (product image)
  *     - .ghpg-product-text-container
@@ -21,8 +21,9 @@
  *       - a (shop/learn links)
  */
 export default function parse(element, { document }) {
-  // Get non-cloned product carousel slides
-  const slides = element.querySelectorAll('.ghpg-product-item-container .owl-item:not(.cloned) .ghpg-product-item-container-row');
+  // Scope to Dell's product carousel element (ghpg-product-carousal)
+  const carousel = element.querySelector('.ghpg-product-carousal, .ghpg-product-carousel') || element;
+  const slides = carousel.querySelectorAll('.ghpg-product-item-container .owl-item:not(.cloned) .ghpg-product-item-container-row');
   const cells = [];
 
   slides.forEach((slide) => {

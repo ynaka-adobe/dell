@@ -13,7 +13,7 @@
   /* grid */
   --grid-container-width: 83.4%;
   --grid-column-width: calc(var(--grid-container-width) / 12);
-  --grid-gutter-width: 8.3%;
+  --grid-gutter-width: 1.5%;
 
   /* spacing */
   --spacing-xxl: 60px;

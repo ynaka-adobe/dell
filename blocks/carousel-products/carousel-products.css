@@ -4,9 +4,13 @@
   padding: 0;
 }
 
+/* One card at a time: stage = 90% browser width (5% gutter each side) */
 .carousel-products .carousel-products-slides-container {
   position: relative;
-  padding: 0 48px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 5%;
+  box-sizing: border-box;
 }
 
 .carousel-products .carousel-products-slides,
@@ -16,13 +20,15 @@
   padding: 0;
 }
 
+/* Stage: width set in JS to (slideCount * 100)% so each slide = 100% of viewport */
 .carousel-products .carousel-products-slides {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  overflow: auto hidden;
-  gap: 24px;
-  padding: 24px 0 32px;
+  overflow-x: auto;
+  overflow-y: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -31,15 +37,16 @@
   display: none;
 }
 
-/* Card - vertical stack: image, then content (title, subtitle, description, CTAs) */
+/* Card: full width × 641px, overlay layout (image right, content left on top) */
 .carousel-products .carousel-products-slide {
-  flex: 0 0 auto;
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 641px;
+  min-height: 641px;
   scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  width: 280px;
+  scroll-snap-stop: always;
   background-color: var(--color-dark-accent);
-  border-radius: 2px;
   overflow: hidden;
   transition: background-color var(--transition-base);
 }
@@ -48,70 +55,109 @@
   background-color: rgb(29 44 59 / 0.95);
 }
 
+/* Column 1: image 1140 × 641, aligned right */
 .carousel-products .carousel-products-slide .carousel-products-slide-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1140px;
+  height: 641px;
   line-height: 0;
   background-color: var(--color-navy);
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Strip wrappers (p, div) so they don’t collapse or hide the image */
+.carousel-products .carousel-products-slide .carousel-products-slide-image > * {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .carousel-products .carousel-products-slide .carousel-products-slide-image picture,
 .carousel-products .carousel-products-slide .carousel-products-slide-image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
+}
+
+/* When img is nested (e.g. inside p), make it fill the column */
+.carousel-products .carousel-products-slide .carousel-products-slide-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .carousel-products .carousel-products-slide .carousel-products-slide-image picture > img {
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
+  object-fit: cover;
 }
 
-/* Content block - title, subtitle, description, CTAs */
-.carousel-products .carousel-products-slide .carousel-products-slide-content {
-  padding: 20px 20px 24px;
+/* Column 2: overlaid on top, aligned left (match .ghpg-product-text-container) */
+.carousel-products .carousel-products-slide .carousel-products-slide-content,
+.carousel-products .carousel-products-slide .ghpg-product-text-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  max-width: 480px;
+  padding: 32px 24px 32px 32px;
   color: var(--color-white);
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  flex-grow: 1;
+  justify-content: center;
+  gap: 0;
+  box-sizing: border-box;
+  background: linear-gradient(to right, rgb(20 29 40 / 0.97) 0%, rgb(20 29 40 / 0.85) 70%, transparent 100%);
 }
 
-/* Product name (e.g. "XPS") */
+/* Product name – match .ghpg-title (dds__h5, dds__mt-0) */
 .carousel-products .carousel-products-slide .carousel-products-slide-title,
+.carousel-products .carousel-products-slide .ghpg-title,
 .carousel-products .carousel-products-slide .carousel-products-slide-content h4 {
   margin: 0;
-  font-size: var(--heading-font-size-m);
+  font-size: var(--heading-font-size-s);
   font-weight: 500;
   line-height: 1.25;
   color: var(--color-white);
 }
 
-/* Tagline (e.g. "Crafted For You") */
+/* Tagline – match .ghpg-subtitle (dds__h2, dds__mt-2) */
 .carousel-products .carousel-products-slide .carousel-products-slide-subtitle,
+.carousel-products .carousel-products-slide .ghpg-subtitle,
 .carousel-products .carousel-products-slide .carousel-products-slide-content h5 {
   margin: 0;
-  font-size: var(--body-font-size-m);
+  margin-top: 8px;
+  font-size: var(--heading-font-size-l);
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.25;
   color: var(--color-gray-200);
 }
 
-/* Description */
+/* Description – match ghpg-product-text-container body text */
 .carousel-products .carousel-products-slide .carousel-products-slide-desc,
 .carousel-products .carousel-products-slide .carousel-products-slide-content p,
 .carousel-products .carousel-products-slide .carousel-products-slide-content span.carousel-products-slide-desc {
   margin: 0;
+  margin-top: 8px;
   font-size: var(--body-font-size-s);
   line-height: 1.5;
   color: var(--color-gray-200);
 }
 
-/* CTA links row - Shop Now / Learn More style */
+/* CTA links row – match ghpg-product-text-container links (Shop Now / Learn More) */
 .carousel-products .carousel-products-slide .carousel-products-slide-ctas {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
-  margin-top: 4px;
+  margin-top: 12px;
 }
 
 .carousel-products .carousel-products-slide .carousel-products-slide-ctas a {
@@ -149,7 +195,7 @@
   display: none;
 }
 
-/* Navigation arrows - positioned outside card area */
+/* Navigation arrows - visible in side padding, above slides */
 .carousel-products .carousel-products-navigation-buttons {
   position: absolute;
   top: 50%;
@@ -159,7 +205,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 10;
   pointer-events: none;
   padding: 0 4px;
 }
@@ -179,6 +225,7 @@
   cursor: pointer;
   color: var(--color-white);
   pointer-events: auto;
+  flex-shrink: 0;
 }
 
 .carousel-products .carousel-products-navigation-buttons button:hover,
@@ -206,12 +253,3 @@
   left: calc(50% - 2px);
 }
 
-@media (width >= 900px) {
-  .carousel-products .carousel-products-slide {
-    width: 320px;
-  }
-
-  .carousel-products .carousel-products-slides-container {
-    padding: 0 56px;
-  }
-}
