@@ -86,8 +86,50 @@
   padding: 0;
   margin: 16px 0 0;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 16px;
+}
+
+.columns-account p:has(.columns-account-feature-icon),
+.columns-account div:has(.columns-account-feature-icon) {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.columns-account .columns-account-features-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.columns-account .columns-account-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex-shrink: 0;
+  color: var(--color-white);
+}
+
+.columns-account .columns-account-feature-item .columns-account-feature-icon {
+  flex-shrink: 0;
+}
+
+.columns-account .columns-account-feature-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.columns-account .columns-account-feature-icon svg {
+  display: block;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px;
+  min-height: 32px;
 }
 
 .columns-account ul li {
@@ -98,8 +140,8 @@
 }
 
 .columns-account ul li img {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 }
 

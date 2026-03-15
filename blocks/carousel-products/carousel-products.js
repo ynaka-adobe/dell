@@ -186,8 +186,7 @@ export default async function decorate(block) {
   container.append(slidesWrapper);
   block.prepend(container);
 
-  /* One card at a time: stage width = slideCount × 100% so each slide fills viewport */
-  slidesWrapper.style.width = `${rows.length * 100}%`;
+  slidesWrapper.style.width = '100%';
 
   if (!isSingleSlide) {
     block.dataset.activeSlide = '0';

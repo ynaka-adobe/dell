@@ -1,4 +1,5 @@
 /* Hero Story - Dell Customer Story / Video Section */
+/* Matches Dell.com ghpg-copytext-container: position-absolute, flex center, full canvas */
 .hero-story-container .hero-story-wrapper {
   max-width: unset;
   padding: 0;
@@ -6,39 +7,54 @@
 
 .hero-story {
   position: relative;
-  padding: 40px 24px;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  min-height: 400px;
   overflow: hidden;
 }
 
-.hero-story picture {
+/* Full canvas background image - 40% transparency to blend into background */
+.hero-story-background {
   position: absolute;
+  inset: 0;
   z-index: 0;
+}
+
+.hero-story-background picture {
+  position: absolute;
   inset: 0;
 }
 
-.hero-story img {
+.hero-story-background img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  opacity: 0.6;
 }
 
-/* Text content overlay */
-.hero-story > div:last-child {
-  position: relative;
+/* Overlay: Dell-style center-middle (dds__position-absolute dds__d-flex dds__align-items-center dds__justify-content-center dds__w-100 dds__h-100 ghpg-copytext-container dds__p-3) */
+.hero-story-overlay,
+.hero-story-copytext-container {
+  position: absolute;
+  inset: 0;
   z-index: 1;
-  max-width: 1200px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
+  height: 100%;
+  padding: var(--spacing-m, 1rem);
+  box-sizing: border-box;
+}
+
+.hero-story-content {
+  max-width: 600px;
+  text-align: center;
 }
 
 .hero-story h2 {
-  font-size: var(--heading-font-size-xs);
+  font-size: 2.5rem;
+  line-height: 3rem;
   font-weight: 500;
-  line-height: 24px;
   color: var(--color-white);
   margin-bottom: 4px;
 }
@@ -56,10 +72,79 @@
   font-size: var(--body-font-size-m);
   line-height: var(--body-line-height);
   margin-bottom: 16px;
-  max-width: 600px;
 }
 
-/* Action button (Play Video / CTA) */
+.hero-story-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+
+/* Play button */
+.hero-story-play {
+  margin: 16px 0 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.hero-story-play.hero-story-play-visible {
+  display: flex;
+}
+
+.hero-story-play-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 50%);
+  color: var(--color-white);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-story-play:hover .hero-story-play-icon {
+  background: rgb(0 0 0 / 70%);
+  transform: scale(1.05);
+}
+
+.hero-story-play-icon svg {
+  margin-left: 4px;
+}
+
+/* Video overlay when playing */
+.hero-story-video-container {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0 0 0 / 90%);
+}
+
+.hero-story-video-container.hero-story-video-active {
+  display: flex;
+}
+
+.hero-story-video {
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+}
+
+/* Action buttons (Learn More, View All Stories) */
 .hero-story a.button,
 .hero-story a.btn,
 .hero-story .button-container a {
@@ -85,7 +170,6 @@
   border-color: var(--color-blue-600);
 }
 
-/* Text links (Learn More, View All Stories) */
 .hero-story a:not(.button, .btn) {
   color: var(--color-white);
   font-weight: 500;
@@ -107,6 +191,11 @@
 
 @media (width >= 900px) {
   .hero-story {
-    padding: 60px 32px;
+    min-height: 500px;
+  }
+
+  .hero-story-overlay,
+  .hero-story-copytext-container {
+    padding: var(--spacing-l, 1.5rem);
   }
 }

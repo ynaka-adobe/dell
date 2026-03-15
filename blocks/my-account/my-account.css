@@ -1,0 +1,217 @@
+/* My Account - Dell My Account Section */
+/* Content: ghpg-login-static-container dds__d-flex dds__flex-column dds__align-items-md-center dds__text-md-center */
+/* Image: ghpg-login-image dds__col--md-8 dds__col--lg-6 dds__offset--md-4 dds__offset--lg-5 */
+.my-account {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  max-width: 1648px;
+  margin-top: 20px;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+
+.my-account-content,
+.my-account-content.ghpg-login-static-container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  margin: 25px;
+  background-color: rgb(0, 42, 88);
+}
+
+.my-account-image,
+.my-account-image.ghpg-login-image {
+  order: -1;
+}
+
+.my-account-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Typography */
+.my-account h3 {
+  font-size: var(--heading-font-size-l);
+  font-weight: 300;
+  line-height: 32px;
+  color: var(--color-white);
+  margin-bottom: 12px;
+}
+
+.my-account p {
+  color: var(--color-white);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  margin-bottom: 16px;
+}
+
+/* CTA buttons */
+.my-account p:has(a) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.my-account a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 200px;
+  padding: var(--button-padding);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: var(--button-line-height);
+  border-radius: var(--button-border-radius);
+  text-decoration: none;
+  transition: var(--button-transition);
+  color: var(--color-near-black);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-white);
+  text-align: center;
+}
+
+.my-account a.my-account-first-link {
+  color: #000;
+}
+
+.my-account a:hover {
+  background-color: var(--color-gray-100);
+  text-decoration: none;
+}
+
+.my-account p a + a {
+  color: var(--color-white);
+  background-color: transparent;
+  border: 1px solid var(--color-white);
+}
+
+.my-account p a + a:hover {
+  background-color: rgb(255 255 255 / 10%);
+}
+
+/* Feature items */
+.my-account ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.my-account ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.my-account ul li:has(.my-account-feature-icon),
+.my-account p:has(.my-account-feature-icon),
+.my-account div:has(.my-account-feature-icon) {
+  display: flex;
+  align-items: flex-start;
+}
+
+.my-account .my-account-features-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.my-account .my-account-feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-right: 100px;
+}
+
+.my-account .my-account-feature-item .my-account-feature-icon {
+  margin-bottom: 0;
+}
+
+.my-account .my-account-feature-icon {
+  margin-bottom: 4px;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+}
+
+.my-account .my-account-feature-icon svg {
+  display: block;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px;
+  min-height: 32px;
+}
+
+.my-account ul li img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.my-account ul li p,
+.my-account ul li span {
+  font-size: var(--body-font-size-m);
+  color: var(--color-white);
+  margin: 0;
+}
+
+/* md: flex row, content left, image absolute top-right, content overlaps image */
+@media (width >= 768px) {
+  .my-account {
+    position: relative;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .my-account-content.ghpg-login-static-container {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+    margin-right: -100px; /* overlap onto image */
+    align-items: center;
+    text-align: center;
+    padding: 40px 24px 40px 48px;
+  }
+
+  .my-account-image.ghpg-login-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 100px;
+  }
+
+  .my-account-image.ghpg-login-image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: right top;
+  }
+}
+
+@media (width >= 992px) {
+  .my-account-content.ghpg-login-static-container {
+    margin-right: -140px;
+    padding: 40px 48px 40px 80px;
+  }
+}

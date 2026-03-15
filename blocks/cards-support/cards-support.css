@@ -1,4 +1,26 @@
 /* Cards Support - Dell Support Tiles */
+.section:has(.cards-support) {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+}
+
+.section:has(.cards-support) .block-content,
+.section:has(.cards-support) .default-content {
+  max-width: 1648px;
+  padding-left: 135px;
+}
+
+.cards-support {
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-support .support-link-container {
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
 .cards-support > ul {
   list-style: none;
   margin: 0;

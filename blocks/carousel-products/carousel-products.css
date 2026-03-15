@@ -98,23 +98,24 @@
   object-fit: cover;
 }
 
-/* Column 2: overlaid on top, aligned left (match .ghpg-product-text-container) */
+/* Column 2: overlaid on top, left aligned, vertically centered with scroll buttons */
 .carousel-products .carousel-products-slide .carousel-products-slide-content,
 .carousel-products .carousel-products-slide .ghpg-product-text-container {
   position: absolute;
   left: 0;
-  top: 0;
-  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 272px;
   z-index: 1;
   max-width: 480px;
   padding: 32px 24px 32px 32px;
-  color: var(--color-white);
+  color: var(--color-dark-accent);
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 0;
   box-sizing: border-box;
-  background: linear-gradient(to right, rgb(20 29 40 / 0.97) 0%, rgb(20 29 40 / 0.85) 70%, transparent 100%);
+  background-color: var(--color-white);
 }
 
 /* Product name – match .ghpg-title (dds__h5, dds__mt-0) */
@@ -125,7 +126,7 @@
   font-size: var(--heading-font-size-s);
   font-weight: 500;
   line-height: 1.25;
-  color: var(--color-white);
+  color: var(--color-dark-accent);
 }
 
 /* Tagline – match .ghpg-subtitle (dds__h2, dds__mt-2) */
@@ -137,7 +138,7 @@
   font-size: var(--heading-font-size-l);
   font-weight: 400;
   line-height: 1.25;
-  color: var(--color-gray-200);
+  color: var(--color-gray-700);
 }
 
 /* Description – match ghpg-product-text-container body text */
@@ -148,7 +149,7 @@
   margin-top: 8px;
   font-size: var(--body-font-size-s);
   line-height: 1.5;
-  color: var(--color-gray-200);
+  color: var(--color-gray-700);
 }
 
 /* CTA links row – match ghpg-product-text-container links (Shop Now / Learn More) */
@@ -169,7 +170,7 @@
 }
 
 .carousel-products .carousel-products-slide .carousel-products-slide-ctas a:hover {
-  color: var(--color-white);
+  color: var(--color-dark-accent);
   text-decoration: underline;
 }
 

@@ -12,4 +12,15 @@ export default function decorate(block) {
   });
   block.textContent = '';
   block.append(ul);
+
+  ul.querySelectorAll('li').forEach((li) => {
+    const firstCol = li.querySelector(':scope > div:first-child');
+    const link = li.querySelector('a[href]');
+    const linkText = link?.textContent?.trim().toLowerCase() || '';
+    const isPlaceholderIcon = /^(icon|home|gear|assistance|warranty|headset)$/i.test(firstCol?.textContent?.trim());
+    const hasSupportLink = /support\s+home|drivers\s+and\s+downloads|order\s+support|warranty\s+and\s+contracts|parts\s+and\s+upgrade/i.test(linkText);
+    if (firstCol && link && isPlaceholderIcon && hasSupportLink) {
+      firstCol.textContent = '';
+    }
+  });
 }

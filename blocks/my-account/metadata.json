@@ -1,0 +1,18 @@
+{
+  "variantName": "my-account",
+  "version": "1.0.0",
+  "created": "2026-03-14T00:00:00Z",
+  "sourceContext": {
+    "originUrl": "https://www.dell.com/en-us"
+  },
+  "visualCharacteristics": {
+    "background": "navy",
+    "layout": "two-column",
+    "theme": "account-promo",
+    "description": "Two-column layout with content (ghpg-login-static-container) and image (ghpg-login-image)"
+  },
+  "contentPattern": {
+    "structure": "columns-content-image",
+    "description": "Column 1: content. Column 2: image. Matches Dell ghpg-login layout."
+  }
+}
