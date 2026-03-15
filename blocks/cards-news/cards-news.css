@@ -44,6 +44,13 @@
   text-decoration: underline;
 }
 
+.cards-news .cards-news-card-body .dds__icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
 .cards-news .cards-news-card-image {
   line-height: 0;
   margin-bottom: 12px;
